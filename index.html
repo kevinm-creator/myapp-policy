@@ -23,12 +23,35 @@
         p {
             color: #94a3b8;
         }
+
+        a {
+            color: #38bdf8;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.25rem;
+            font-weight: bold;
+        }
+
+        nav a {
+            text-decoration: none;
+        }
+
+        nav a[aria-current="page"] {
+            color: #f8fafc;
+        }
     </style>
 </head>
 
 <body>
+    <nav aria-label="GoSki pages">
+        <a href="./" aria-current="page">Privacy Policy</a>
+        <a href="support/">Support</a>
+    </nav>
+
     <h1>Privacy Policy & Support</h1>
-    <p>Last updated: September 28, 2026</p>
+    <p>Last updated: October 5, 2026</p>
 
     <h2>1. Information We Use</h2>
     <p>GoSki uses your first and last name, email address and account identifier to verify your email, identify your
@@ -50,9 +73,9 @@
         the information needed for those services. Email delivery providers process your address and the messages
         we send you (sign-in codes and, if you turn them on, snow alert emails) to deliver them, and tell us when a
         message bounces or is reported as spam. Apple processes App Store purchases under its own privacy policy.</p>
-    <p>Snow alerts are based on public forecasts and alerts from the U.S. National Weather Service. GoSki requests
-        that information for resort locations and does not send the National Weather Service any information
-        about you.</p>
+    <p>Snow alerts are based on public forecasts and alerts from the U.S. National Weather Service and, for
+        Canadian resorts, Environment and Climate Change Canada. GoSki requests that information for resort
+        locations and does not send either agency any information about you.</p>
     <p>GoSki does not sell your personal information or use it to track you across other companies' apps and
         websites for targeted advertising. Choosing a resort, saving a favorite or following a resort for alerts
         does not give GoSki access to your device's precise location.</p>
@@ -64,7 +87,8 @@
     <p>Recording journals are encrypted on your device and associated with the account that recorded them.
         GoSki does not upload these journals or provide cloud recording backup. You can export a recording;
         exported files are shared only to the destination you choose. Finished recordings can be deleted
-        using their export and manage controls. Delete recordings you no longer want before deleting your account.</p>
+        using their export and manage controls. Deleting your account also erases that account's recordings
+        saved on the phone you delete it from, so export any you want to keep first.</p>
     <p>Downloaded map areas and planned routes are stored locally and have their own management and deletion
         controls. Map and weather services receive requests for the geographic areas you view or download.
         Those requests are separate from your ski recording journal. Files you export are not removed when
@@ -72,8 +96,8 @@
 
     <h2>4. Account, Alert and Purchase Choices</h2>
     <p>You can remove saved favorites in the app. The account deletion option in Settings deletes your GoSki
-        authentication account and its owned profile, favorites, resort requests, and snow alert settings and
-        records. You can also contact us about account data or deletion using the support address below.</p>
+        authentication account and its owned profile, favorites, resort requests, snow alert settings and
+        records, and its recordings saved on that phone. You can also contact us about account data or deletion using the support address below.</p>
     <p>You can turn off alert email or stop following a resort on the app's Snow alerts screen at any time, or use
         the unsubscribe option in any alert email (most mail apps show it as an Unsubscribe button). If an alert
         email bounces permanently or is reported as spam, we turn off alert email for that account. We will update
@@ -88,8 +112,9 @@
     <h2>5. App Support</h2>
     <p>If you encounter any issues with the GoSki app or have questions regarding your data, please contact our support
         team:</p>
-    <p><strong>Email:</strong> <a href="mailto:goskiapp@gmail.com" style="color: #38bdf8;">goskiapp@gmail.com</a></p>
-    <p>We aim to respond to all inquiries within 24-48 hours.</p>
+    <p><strong>Email:</strong> <a href="mailto:goskiapp@gmail.com">goskiapp@gmail.com</a></p>
+    <p>We aim to respond to all inquiries within 24-48 hours. Help with signing in, the GoSki Pass and deleting
+        your account is on our <a href="support/">Support page</a>.</p>
 </body>
 
 </html>
