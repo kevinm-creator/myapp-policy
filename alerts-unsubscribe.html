@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Stop GoSki alert emails</title>
+  <style>
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #0f172a; color: #f8fafc; font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+    main { max-width: 420px; margin: 24px; padding: 24px; border: 1px solid rgba(255,255,255,.1); border-radius: 16px; background: #1e293b; }
+    h1 { font-size: 20px; margin: 0 0 8px; }
+    p { color: #94a3b8; margin: 0 0 16px; }
+    button { width: 100%; min-height: 48px; border: 0; border-radius: 11px; background: #2563eb; color: white; font: 600 16px system-ui, sans-serif; cursor: pointer; }
+    button:disabled { opacity: .5; cursor: not-allowed; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Stop GoSki alert emails?</h1>
+    <p id="note">Emails stop right away. You can turn them back on in the GoSki app under You → Alerts.</p>
+    <!-- A form post, not a script request: it works without any cross-site permissions,
+         and opening this page alone never unsubscribes anyone. -->
+    <form id="stop" method="post">
+      <button type="submit" id="submit">Unsubscribe</button>
+    </form>
+  </main>
+  <script>
+    // The link carries its signed token after '#', which browsers never send to any server log.
+    const token = new URLSearchParams(location.hash.slice(1)).get('t');
+    const form = document.getElementById('stop');
+    if (token) {
+      form.action = 'https://mlvzfnqoujkytdlikmpa.supabase.co/functions/v1/alerts-unsubscribe?t=' + encodeURIComponent(token);
+    } else {
+      document.getElementById('submit').disabled = true;
+      document.getElementById('note').textContent = 'This link is incomplete. Turn off alert emails in the GoSki app under You → Alerts.';
+    }
+  </script>
+</body>
+</html>
